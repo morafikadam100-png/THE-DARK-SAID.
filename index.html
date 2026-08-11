@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plassher Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial;
+      background: linear-gradient(rgba(200,0,0,0.8), rgba(120,0,0,0.9)),
+                  url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 40px;
+      letter-spacing: 2px;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      margin: 40px auto;
+      width: 320px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 8px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      width: 95%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #ff3838;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff0000;
+    }
+
+    a {
+      color: #ffdede;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #eee;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>PLASSHER PLATFORM</h1>
+
+<div class="box">
+  <h2>Login</h2>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+
+  <p>Don't have account? <a href="register.html">Register</a></p>
+
+  <p><a href="#" onclick="resetPassword()">Forgot Password?</a></p>
+</div>
+
+<footer>
+  © 2026 PLASSHER - Created by Adam Zighem
+</footer>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyB6eRzkkPGGe6Km_e8OC6SoNI9vYE1KeuY",
+  authDomain: "plassher-b7ad4.firebaseapp.com",
+  projectId: "plassher-b7ad4",
+  storageBucket: "plassher-b7ad4.appspot.com",
+  messagingSenderId: "217915657263",
+  appId: "1:217915657263:web:7115fb78191e7d0b2e4ada"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+// LOGIN
+function login(){
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then(() => {
+
+    // 👑 ADMIN
+  if(
+  email === "Adamzighem6@gmail.com" || 
+  email === "dchrifabdellah@gmail.com"
+){
+  window.location.href = "adminpanel.html";
+} else {
+  window.location.href = "home.html";
+  }
+    
+  })
+  .catch((error) => {
+    alert(error.message);
+  });
+}
+
+// RESET PASSWORD
+function resetPassword() {
+  var email = document.getElementById("email").value;
+
+  if(email === ""){
+    alert("دخل الإيميل ديالك");
+    return;
+  }
+
+  firebase.auth().sendPasswordResetEmail(email)
+  .then(() => {
+    alert("تم إرسال رابط تغيير كلمة السر للإيميل ديالك");
+  })
+  .catch((error) => {
+    alert(error.message);
+  });
+}
+</script>
+
+</body>
+</html>

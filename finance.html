@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Financial Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --main:#0f2027;
+    --secondary:#2c5364;
+    --gold:#FFD700;
+    --card:#ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, var(--main), var(--secondary));
+    text-align: center;
+    color: #333;
+}
+
+/* HEADER */
+.header{
+    padding: 50px 20px 20px;
+    color: white;
+}
+
+.header h1{
+    margin:0;
+    font-size: 32px;
+}
+
+.header p{
+    margin-top:10px;
+    opacity:0.9;
+}
+
+/* BACK BUTTON */
+.back{
+    position: absolute;
+    top:20px;
+    left:20px;
+    background:white;
+    padding:8px 15px;
+    border-radius:20px;
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.back:hover{
+    background:#FFD700;
+    color:black;
+}
+
+/* CONTAINER */
+.container {
+    margin-top: 30px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* GOLD LINE EFFECT */
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background: var(--gold);
+}
+
+/* HOVER */
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* TEXT */
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    opacity: 0.7;
+}
+
+/* ICON STYLE (اختياري جمالي) */
+.card::after{
+    content:"💰";
+    position:absolute;
+    bottom:10px;
+    right:15px;
+    font-size:20px;
+    opacity:0.2;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="home.html" class="back">← Back</a>
+
+<div class="header">
+<h1>Financial Sciences</h1>
+<p>Explore finance, taxation, and public economic systems</p>
+</div>
+
+<div class="container">
+
+<div class="card" onclick="go('public_finance')">
+<h2>Public Finance</h2>
+<p>Government revenue & spending</p>
+</div>
+
+<div class="card" onclick="go('tax')">
+<h2>Tax Law</h2>
+<p>Tax systems and legislation</p>
+</div>
+
+<div class="card" onclick="go('budget')">
+<h2>Public Budgeting</h2>
+<p>Budget planning & control</p>
+</div>
+
+<div class="card" onclick="go('accounting')">
+<h2>Public Sector Accounting</h2>
+<p>Accounting in public institutions</p>
+</div>
+
+<div class="card" onclick="go('audit')">
+<h2>Financial Governance and Audit</h2>
+<p>Audit & financial control systems</p>
+</div>
+
+</div>
+
+<script>
+function go(section) {
+
+    if(section === 'public_finance'){
+        window.location.href = "public_finance.html";
+    }
+    else if(section === 'tax'){
+        window.location.href = "tax.html";
+    }
+    else if(section === 'budget'){
+        window.location.href = "budget.html";
+    }
+    else if(section === 'accounting'){
+        window.location.href = "accounting.html";
+    }
+    else if(section === 'audit'){
+        window.location.href = "audit.html";
+    }
+
+}
+</script>
+
+</body>
+</html>

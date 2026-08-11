@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Plassher Platform</title>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* BODY */
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(135deg,#0f0f0f,#1a0000);
+  color:white;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:40px 20px;
+}
+
+/* LOGO ICON */
+.logo-icon{
+  font-size:55px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* TITLE */
+h1{
+  font-size:42px;
+  margin:10px 0;
+  letter-spacing:2px;
+}
+
+h1 span{
+  color:#ff4d4d;
+}
+
+/* SUBTITLE */
+.subtitle{
+  color:#ccc;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+/* BUTTONS */
+.cta a{
+  display:inline-block;
+  margin:8px;
+  padding:12px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.primary{
+  background:linear-gradient(45deg,#ff0000,#ff4d4d);
+  color:white;
+}
+
+.secondary{
+  border:1px solid #555;
+  color:#ddd;
+}
+
+.cta a:hover{
+  transform:scale(1.05);
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  margin:30px 0 15px;
+  font-size:18px;
+}
+
+/* MENU */
+.menu{
+  width:90%;
+  max-width:500px;
+  margin:auto;
+}
+
+/* CARD */
+.card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px;
+  border-radius:12px;
+  margin:15px 0;
+  color:black;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.03);
+  opacity:0.9;
+}
+
+/* LEFT */
+.left{
+  display:flex;
+  align-items:center;
+}
+
+.icon{
+  font-size:22px;
+  margin-right:10px;
+}
+
+/* COLORS */
+.admin{
+  background:#EFFF6B;
+}
+
+.finance{
+  background:#FFD700;
+}
+
+/* ARROW */
+.arrow{
+  font-size:16px;
+}
+
+/* FOOTER */
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,0.9);
+  color:#aaa;
+  padding:8px;
+  text-align:center;
+  font-size:11px;
+  border-top:1px solid #333;
+}
+
+footer p{
+  margin:3px 0;
+}
+
+footer i{
+  margin:0 4px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-icon">📚</div>
+
+<h1>PLASSHER <span>.COM</span></h1>
+
+<div class="subtitle">
+Platform for Legal, Administrative and Social Sciences
+</div>
+
+<div class="cta">
+<a href="#menu" class="primary">Start Learning</a>
+<a href="#menu" class="secondary">Explore</a>
+</div>
+
+</header>
+
+<div class="section-title">Choose your field 👇</div>
+
+<div id="menu" class="menu">
+
+<a href="admin.html" style="text-decoration:none;color:black;">
+<div class="card admin">
+<div class="left">
+<div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
+<div>
+<h2>Administrative Pole</h2>
+<p>Legal & administrative studies</p>
+</div>
+</div>
+<div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+</div>
+</a>
+
+<a href="finance.html" style="text-decoration:none;color:black;">
+<div class="card finance">
+<div class="left">
+<div class="icon"><i class="fa-solid fa-coins"></i></div>
+<div>
+<h2>Financial Pole</h2>
+<p>Finance & economic systems</p>
+</div>
+</div>
+<div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+</div>
+</a>
+
+</div>
+
+<footer>
+
+<p>© 2026 - Adam Zighem</p>
+
+<p>
+<i class="fa fa-phone"></i> 0719963082 |
+<i class="fa fa-envelope"></i> adammorafik1314@protonmail.com
+</p>
+
+<p>
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-whatsapp"></i>
+<i class="fa-brands fa-github"></i>
+</p>
+
+</footer>
+
+</body>
+</html>
+

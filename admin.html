@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Administrative Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --main:#4facfe;
+    --secondary:#00f2fe;
+    --card:#ffffff;
+    --accent:#d9f06b;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, var(--main), var(--secondary));
+    text-align: center;
+    color: #333;
+}
+
+/* HEADER */
+.header{
+    padding: 50px 20px 20px;
+    color: white;
+}
+
+.header h1{
+    margin:0;
+    font-size: 32px;
+}
+
+.header p{
+    opacity:0.9;
+    margin-top:10px;
+}
+
+/* CONTAINER */
+.container {
+    margin-top: 30px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background: var(--accent);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+/* TEXT */
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    opacity: 0.7;
+}
+
+/* BACK BUTTON */
+.back{
+    position: absolute;
+    top:20px;
+    left:20px;
+    background:white;
+    padding:8px 15px;
+    border-radius:20px;
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.back:hover{
+    background:#222;
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="home.html" class="back">← Back</a>
+
+<div class="header">
+<h1>Administrative Sciences</h1>
+<p>Explore structured administrative knowledge and legal systems</p>
+</div>
+
+<div class="container">
+
+<div class="card" onclick="go('law')">
+<h2>Administrative Law Unit</h2>
+<p>Learn administrative legal principles</p>
+</div>
+
+<div class="card" onclick="go('public')">
+<h2>Public Administration</h2>
+<p>Government systems & management</p>
+</div>
+
+<div class="card" onclick="go('activity')">
+<h2>Activity Unit</h2>
+<p>Administrative activities & functions</p>
+</div>
+
+<div class="card" onclick="go('litigation')">
+<h2>Administrative Litigation Unit</h2>
+<p>Disputes and legal procedures</p>
+</div>
+
+<div class="card" onclick="go('courts')">
+<h2>Administrative Courts Unit</h2>
+<p>Structure of administrative courts</p>
+</div>
+
+</div>
+
+<script>
+function go(section) {
+
+    if(section === 'law'){
+        window.location.href = "law.html";
+    }
+    else if(section === 'public'){
+        window.location.href = "public.html";
+    }
+    else if(section === 'activity'){
+        window.location.href = "activity.html";
+    }
+    else if(section === 'litigation'){
+        window.location.href = "litigation.html";
+    }
+    else if(section === 'courts'){
+        window.location.href = "courts.html";
+    }
+
+}
+</script>
+
+</body>
+</html>
